@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -13,11 +13,12 @@
 </head>
 
 <body class="lexend max-w-screen-2xl mx-auto">
-  <div class="min-h-screen bg-white">
+  <div class=" bg-white">
     <!-- Navbar -->
-    <nav class="bg-[#F9F7F3] bg-opacity-95 p-1 md:p-6 flex items-center shadow-md sticky top-0">
+    <nav  class="bg-[#FFFAE9] bg-opacity-60 p-1 md:p-6 flex items-center  sticky top-0">
       <div class="w-full md:w-[80%] mx-auto flex justify-between">
-        <a href="faq.html"><button id="blog-page" class="bg-green-400 text-black font-bold px-6 py-2 rounded-lg hover:bg-green-500">Blog</button></a>
+        <a href="faq.html"><button id="blog-page"
+            class="bg-green-400 text-black font-bold px-6 py-2 rounded-lg hover:bg-green-500">Blog</button></a>
         <div class="flex items-center space-x-2">
           <img src="./assets/logo.png" alt="Logo" class="w-8 h-8">
           <span class="font-bold text-black text-lg">UnifiedVoices</span>
@@ -30,11 +31,16 @@
       </div>
 
     </nav>
+    <!-- tabs -->
+    <div class="bg-white bg-opacity-60 mx-auto flex justify-center gap-4 sticky top-[48px] md:top-[88px]">
+      <button onclick="donationButton()" id="donate-tab-button"
+        class="btn px-6  my-2 md:my-8 text-black bg-green-400 border-none">Donation</button>
+      <button onclick="historyButton()" id="history-tab-button" class="btn px-6 my-2 md:my-8">History</button>
+    </div>
 
     <!-- Main Content -->
-    <div class="max-w-6xl mt-10 pb-20 container mx-auto p-6">
 
-      <div class="space-y-6 max-w-[1076px]">
+      <div id="donation-cards" class="space-y-6 max-w-[1076px] max-w-6xl  pb-20 container mx-auto p-6">
         <!-- First Card -->
         <div id="card1"
           class="donation-card bg-white p-6 rounded-lg flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 border-2 border-slate-300">
@@ -50,9 +56,11 @@
               </button>
             </div>
             <h2 class="font-bold text-black text-xl mt-2">Donate for Flood at Noakhali, Bangladesh</h2>
-            <p class="text-gray-600 mt-2">The recent floods in Noakhali have caused significant damage to homes infrastructure. Your donation will help provide
-            essential supplies and to those affected by this disaster. Every contribution, big or small, makes difference. Please
-            join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+            <p class="text-gray-600 mt-2">The recent floods in Noakhali have caused significant damage to homes
+              infrastructure. Your donation will help provide
+              essential supplies and to those affected by this disaster. Every contribution, big or small, makes
+              difference. Please
+              join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
             <input id="input-amount-1" type="text" placeholder="Write Donation Amount"
               class="w-full bg-white mt-4 p-2 border border-gray-300 rounded-md">
             <button id="donate-button-1"
@@ -91,10 +99,14 @@
               </button>
             </div>
             <h2 class="font-bold text-black text-xl mt-2">Donate for Flood Relief in Feni, Bangladesh</h2>
-            <p class="text-gray-600 mt-2">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous
-            donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this
-            calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every
-            contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+            <p class="text-gray-600 mt-2">The recent floods in Feni have devastated local communities, leading to severe
+              disruption and loss. Your generous
+              donation will help provide immediate aid, including food, clean water, and medical supplies, to those
+              affected by this
+              calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster.
+              Every
+              contribution counts towards making a real difference. Please consider donating today to assist those in
+              urgent need.</p>
             <input id="input-amount-2" type="text" placeholder="Write Donation Amount"
               class="w-full bg-white mt-4 p-2 border border-gray-300 rounded-md">
             <button id="donate-button-2"
@@ -134,11 +146,15 @@
               </button>
             </div>
             <h2 class="font-bold text-black text-xl mt-2">Aid for Injured in the Quota Movement</h2>
-            <p class="text-gray-600 mt-2">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support
-            is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing,
-            you help ensure that injured individuals receive the care and support they need during this challenging time. Every
-            donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a
-            donation to support these brave individuals in their time of need.</p>
+            <p class="text-gray-600 mt-2">The recent Quota movement has resulted in numerous injuries and significant
+              hardship for many individuals. Your support
+              is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By
+              contributing,
+              you help ensure that injured individuals receive the care and support they need during this challenging
+              time. Every
+              donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider
+              making a
+              donation to support these brave individuals in their time of need.</p>
             <input id="input-amount-3" type="text" placeholder="Write Donation Amount"
               class="w-full bg-white mt-4 p-2 border border-gray-300 rounded-md">
             <button id="donate-button-3"
@@ -163,8 +179,23 @@
         </div>
 
       </div>
+
+  </div>
+
+  <!-- History -->
+  <div id="history-container "  class=""> <!-- Initially hidden -->
+    <div id="history-section" class="hidden bg-white border border-gray-200 rounded-lg p-6">
+      <h3 class="text-lg text-center font-bold mb-4">Donation History</h3>
+      <div id="history-list" class="flex flex-col gap-3"></div>
+
     </div>
   </div>
+
+  <!-- bottom color -->
+  <div  class=" h-[140px] bg-[#FFFAE9] ">
+  </div>
+
+
 </body>
 
 </html>
