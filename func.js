@@ -36,10 +36,10 @@ function handleDonation(cardNumber) {
     }
 
     const histItem = document.createElement('div')
-    histItem.className = " bg-white p-5 rounded-md border-2 border-gray-200"
+    histItem.className = "w-5/6 mx-auto bg-white p-5 rounded-lg border-2 border-gray-200"
     histItem.innerHTML = `
-      <p class="text-xl text-black">${sectorMessage}</p>
-      <p class="text-xs text-black">Date: ${new Date().toString()}</p>
+      <p class="text-xl font-bold text-black py-2">${sectorMessage}</p>
+      <p class="text-base text-slate-600">Date: ${new Date().toString()}</p>
     `;
     historyContent.insertBefore(histItem, historyContent.firstChild)
   }
@@ -72,7 +72,6 @@ function historyButton() {
   histButton.classList.add('bg-green-400');
   donateCard.classList.add('hidden')
   historySection.classList.remove('hidden')
-
 
 }
 function donationButton() {
